@@ -27,6 +27,9 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var idTextField: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailField.isHidden = true
+        nameField.isHidden = true
+        marksField.isHidden = true
 
         // Do any additional setup after loading the view.
     }
@@ -39,6 +42,9 @@ class SearchViewController: UIViewController {
             showMessage(msg: "Please enter ID", controller: self)
         }
         else{
+            emailField.isHidden = false
+            nameField.isHidden = false
+            marksField.isHidden = false
             nameField.text = st?.name
             emailField.text = st?.email
             marksField.text = String(st!.marks)
